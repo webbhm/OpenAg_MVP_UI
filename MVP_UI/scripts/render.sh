@@ -26,8 +26,8 @@ yes | cp "$in_dir$FN" "$out_dir"image.jpg
 
 #create the temperature graph
 echo "Build temperature graph"
-python /home/pi/python/temp_chart.py
+python /home/pi/MVP_UI/python/temp_chart.py
 
 echo "Build humidity graph"
 #create the humidity graph
-python /home/pi/python/humidity_chart.py
+python /home/pi/MVP_UI/python/humidity_chart.py
