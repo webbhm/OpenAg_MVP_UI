@@ -14,6 +14,8 @@ ts_lst = [x['value']['timestamp'] for x in r.json()['rows']]
 #Build the chart from the lists
 line_chart = pygal.Line()
 line_chart.title = 'Humidity'
+line_chart.y_title="Percent"
+line_chart.x_title="Timestamp (hover over to display)"
 # reverse order for proper time sequence
 ts_lst.reverse()
 line_chart.x_labels = ts_lst

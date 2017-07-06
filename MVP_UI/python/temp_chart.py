@@ -13,6 +13,8 @@ ts_lst = [x['value']['timestamp'] for x in r.json()['rows']]
 
 line_chart = pygal.Line()
 line_chart.title = 'Temperature'
+line_chart.y_title="Degrees C"
+line_chart.x_title="Timestamp (hover over to display date)"
 #need to reverse order to go from earliest to latest
 ts_lst.reverse()
 line_chart.x_labels = ts_lst
