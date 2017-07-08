@@ -16,6 +16,9 @@ Interface code for the MVP data - graphs of temp, humidity, etc
 
 ### Configure the server:
    - You want the server to start every time the Raspberry is re-booted or plugged in;therefore, you want to add this script to a start up file.  See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the rc.local file.
+
+```startServer.sh```
+   
    
 ### Create the view document in CouchDB
 
@@ -27,10 +30,10 @@ To pull data from the database you need a view.  This is a specially named docum
 
 //There is no need to take pictures when the lights are off
 
-1 6-22 * * * /home/pi/MVP_UI/scripts/webcam.sh
+```1 6-22 * * * /home/pi/MVP_UI/scripts/webcam.sh```
 
 //This moves the latest picture, and builds the charts
 
 //It runs at 3 minutes after every hour.  The three minutes is to do the rendering after the picture has been taken
 
-3 * * * * /home/pi/MVP_UI/scripts/render.sh
+```3 * * * * /home/pi/MVP_UI/scripts/render.sh```
