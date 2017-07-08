@@ -17,7 +17,7 @@ Interface code for the MVP data - graphs of temp, humidity, etc
 ### Configure the server:
    - You want the server to start every time the Raspberry is re-booted or plugged in;therefore, you want to add this script to a start up file.  See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the rc.local file.
 
-```startServer.sh```
+```bash startServer.sh```
    
    
 ### Create the view document in CouchDB
