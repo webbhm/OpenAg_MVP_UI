@@ -3,16 +3,25 @@ Interface code for the MVP data - graphs of temp, humidity, etc
   - Extract OpenAg_MVP_UI to the Pi directory
   - Move the web directory to Documents/OpenAg_MVP/
 ## The UI is composed of several scripts and files
+
   - index.html is a tabed web page for displaying data.  The code is simple and can be hacked to add more tabs and additional features
   The web server is needed to make things accessible over the web, it should be started every time the Raspberry Pi is booted.
-  See the following for a simple way to start the server on boot:
-  https://www.raspberrypi.org/documentation/linux/usage/rc-local.md
-  - server_8000.py starts a simple Python web server
-## The scripts collect and move the data to the web directory for access by the server
+  - server_8000.py starts a simple Python web server.  NOTE: do not run this file to start the server, instead run the bash script (startServer.sh) as the python file must be run from the directory from which the files are to be served.
+  
+  - The scripts collect and move the data to the web directory for access by the server
   - webcam.sh takes the pictures
   - render.sh moves the latest picture to the web directory, and generates the charts from CouchDB data 
   
-## The following entries need to be added to the crontab file.
+## Setup
+
+### Configure the server:
+   - You want the server to start every time the Raspberry is re-booted or plugged in;therefore, you want to add this script to a start up file.  See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the rc.local file.
+   
+### Create the view document in CouchDB
+
+To pull data from the database you need a view.  This is a specially named document in the data database.  Run the initialize script to load this file into the database.
+
+### The following entries need to be added to the crontab file.
 
 //This takes a picture one minute after the hour, for the hours of 6 to 22 (10pm)
 
