@@ -22,7 +22,9 @@ Interface code for the MVP data - graphs of temp, humidity, etc
    
 ### Create the view document in CouchDB
 
-To pull data from the database you need a view.  This is a specially named document in the data database.  Run the initialize script to load this file into the database.
+To pull data from the database you need a view.  This is a specially named document in the data database.  Run the following command from the command line:
+
+```curl -X PUT http://localhost:5984/mvp_sensor_data/_design/doc --upload-file /home/pi/MVP_UI/setup/view.txt```
 
 ### The following entries need to be added to the crontab file.
 
