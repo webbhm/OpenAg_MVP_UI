@@ -19,7 +19,7 @@ Interface code for the MVP data - graphs of temp, humidity, etc
 
 ```bash startServer.sh```
 
-NOTE: This is going through some dynamic changes.  In order to enable IoT capabilities we are looking at switching to lighttpd as a web server instead of Python simpleHTTPServer.  Feel free to try this out, but be warned that we may rip it out in the future (by the end of July) and put something else in its place.  Hopefully we can do so without a lot of impact, and a lot of new features!
+NOTE: This is going through some dynamic changes.  In order to enable IoT capabilities we are looking at switching to [lighttpd](http://redmine.lighttpd.net/projects/lighttpd) as a web server instead of Python's simpleHTTPServer.  Feel free to try this out, but be warned that we may rip it out in the future (by the end of July) and put something else in its place.  Hopefully we can do so without a lot of impact, and add a lot of new features!
    
    
 ### Create the view document in CouchDB
