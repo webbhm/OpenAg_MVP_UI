@@ -15,9 +15,9 @@ Interface code for the MVP data - graphs of temp, humidity, etc
 ## Setup
 
 ### Configure the server:
-   - You want the server to start every time the Raspberry is re-booted or plugged in;therefore, you want to add this script to a start up file.  See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the rc.local file.
+   - You want the server to start every time the Raspberry is re-booted or plugged in;therefore, you want to add this script to a start up file.  See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local file.
 
-```bash startServer.sh &```
+```nohup bash startServer.sh &>/dev/null &```
 
 The & is necessary to have the process run in background, else it will not let your startup process finish.
 NOTE: This is going through some dynamic changes.  In order to enable IoT capabilities we are looking at switching to [lighttpd](http://redmine.lighttpd.net/projects/lighttpd) as a web server instead of Python's simpleHTTPServer.  Feel free to try this out, but be warned that we may rip it out in the future (by the end of July) and put something else in its place.  Hopefully we can do so without a lot of impact, and add a lot of new features!
