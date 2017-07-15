@@ -15,6 +15,12 @@ Interface code for the MVP data - graphs of temp, humidity, etc
 ## Setup
 
 ### Configure the server:
+Ignore this for now.  I am having trouble getting rc.local to work, so for now just run the start script from the command line:
+
+```bash ~/MVP_UI/scripts/startServer.sh```
+
+logs & errors will go to: ~/MVP_UI/server.log
+
    - You want the server to start every time the Raspberry is re-booted or plugged in;therefore, you want to add this script to a start up file.  See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local filehttps://www.maketecheasier.com/run-bash-commands-background-linux/), and [here](https://www.maketecheasier.com/run-bash-commands-background-linux/) for running background.
 
 ```nohup bash startServer.sh &>/dev/null &```
