@@ -27,7 +27,6 @@ To pull data from the database you need a view.  This is a specially named docum
 
 ```curl -X PUT http://localhost:5984/mvp_sensor_data/_design/doc --upload-file /home/pi/MVP_UI/setup/view.txt```
 
-
 ### Install charting software  
 
   - Install pygal
@@ -57,6 +56,11 @@ The simple version starts the server from the command line, however you need to 
    - See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local filehttps://www.maketecheasier.com/run-bash-commands-background-linux/), and [here](https://www.maketecheasier.com/run-bash-commands-background-linux/) for running background.
 
   - logs & errors will go to: ~/MVP_UI/server.log
+  - To test the server, open a browser and type:
+  
+  ```localhost:8000```
+  
+  - To make this accessible over the web, and from a remote computer requires configuring your router to port forward to this machine on port 8000.  This is a longer topic and not covered here.
 
 ### The following entries need to be added to the crontab file.
 
