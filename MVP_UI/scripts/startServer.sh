@@ -9,4 +9,4 @@
 
 #NOTE: The server must be started from the directory from which files are to be served
 cd /home/pi/MVP_UI/web
-nohup python /home/pi/MVP_UI/python/server_8000.py &>~/MVP_UI/server.log &
+nohup python /home/pi/MVP_UI/python/server_8000.py &>/home/pi/MVP_UI/server.log &
