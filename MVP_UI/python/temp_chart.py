@@ -21,5 +21,5 @@ line_chart.x_labels = ts_lst
 #need to reverse order to go from earliest to latest
 v_lst.reverse()
 line_chart.add('Air Temp', v_lst)
-line_chart.render_to_file('/home/pi/Documents/OpenAg-MVP/web/temp_chart.svg')
+line_chart.render_to_file('/home/pi/MVP_UI/web/temp_chart.svg')
 
