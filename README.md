@@ -1,5 +1,6 @@
 # OpenAg_MVP_UI
 Interface code for the MVP data - graphs of temp, humidity, etc
+The UI is an 'add on' to the core MVP, hence here in a separate directory at this time.
 
 ## The UI is composed of several scripts and files
 
@@ -76,3 +77,9 @@ Before testing the server, you must make sure that any previous copies are stopp
 For testing working with the server (trying different port numbers, etc), use the script without the background processing:
 
 ```/home/pi/MVP_UI/scripts/startServer2.sh```
+
+### Future Development
+
+  - This is a minimalist web page, enhancements are needed for data entry and IoT functions like remotely controlling pumps and other devices.
+  - As the web site adds functionality, security will be an issue (login).
+  - Some map/reduce routines need to be added to CouchDB so multiple sensors can be displayed on the same chart.  This will likely require 'binning' of sensor readings so multiple sensors are assigned to the same axis point (ie. change the second timestamp to a Y-M-D-Hour-bin; the 1st, 2nd or 3rd reading of the hour)
