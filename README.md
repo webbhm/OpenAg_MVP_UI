@@ -30,22 +30,25 @@ To pull data from the database you need a view.  This is a specially named docum
 ### Install charting software  
 
   - Install pygal
+  
   ```sudo pip install pygal```
 
 ### Configure the server:
 
 This version runs the server in 'background' and will restart automatically every time the Raspberry is rebooted.  To do this you need to edit the file /etc/rc.local and add a line to start the server.  This needs to be done from the command line so that sudo is the 'owner' of the file.
   
-    - Open a terminal window
-    - Type:
-    ```cd /etc```
-    ```sudo leafpad rc.local```
+  - Open a terminal window
+  - Type:
     
-    - scroll to just above the line that says "exit 0" (this should be the last line) and type:
+  ```cd /etc```
     
-    ```bash /home/pi/MVP_UI/scripts/startServer.sh```
+  ```sudo leafpad rc.local```
     
-    - See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local filehttps://www.maketecheasier.com/run-bash-commands-background-linux/), and [here](https://www.maketecheasier.com/run-bash-commands-background-linux/) for running background.
+  - scroll to just above the line that says "exit 0" (this should be the last line) and type:
+    
+  ```bash /home/pi/MVP_UI/scripts/startServer.sh```
+    
+  - See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local filehttps://www.maketecheasier.com/run-bash-commands-background-linux/), and [here](https://www.maketecheasier.com/run-bash-commands-background-linux/) for running background.
 
   - logs & errors will go to: ~/MVP_UI/server.log
   - To test the server, open a browser and type:
@@ -61,6 +64,7 @@ This version runs the server in 'background' and will restart automatically ever
 //It runs at 3 minutes after every hour.  The three minutes is to do the rendering after the picture has been taken
 
 ```3 * * * * /home/pi/MVP_UI/scripts/render.sh```
+
 ### Testing
 If you encounter problems, run the pieces individually from the command line.
 
@@ -68,13 +72,13 @@ The following will attempt to move the latest picture to the web directory and b
 
 ```/home/pi/MVP_UI/scripts/render.sh```
 
-Double clicking on /home/pi/MVP_UI/web/index.html should bring it up in a browers.
+  - Double clicking on /home/pi/MVP_UI/web/index.html should bring it up in a browers.
 
-Before testing the server, you must make sure that any previous copies are stopped.  To stop the server, run:
+  - Before testing the server, you must make sure that any previous copies are stopped.  To stop the server, run:
 
 ```/home/pi/MVP_UI/scripts/stopServer.sh```
 
-For testing working with the server (trying different port numbers, etc), use the script without the background processing:
+  - For testing working with the server (trying different port numbers, etc), use the script without the background processing:
 
 ```/home/pi/MVP_UI/scripts/startServer2.sh```
 
