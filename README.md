@@ -1,7 +1,6 @@
 # OpenAg_MVP_UI
 Interface code for the MVP data - graphs of temp, humidity, etc
-  - Extract OpenAg_MVP_UI to the Pi directory
-  - Move the web directory to Documents/OpenAg_MVP/
+
 ## The UI is composed of several scripts and files
 
   - index.html is a tabed web page for displaying data.  The code is simple and can be hacked to add more tabs and additional features
@@ -13,35 +12,53 @@ Interface code for the MVP data - graphs of temp, humidity, etc
   - render.sh moves the latest picture to the web directory, and generates the charts from CouchDB data 
   
 ## Setup
-
-### Configure the server:
-Ignore this for now.  I am having trouble getting rc.local to work, so for now just run the start script from the command line:
-
-```bash ~/MVP_UI/scripts/startServer.sh```
-
-logs & errors will go to: ~/MVP_UI/server.log
-
-   - You want the server to start every time the Raspberry is re-booted or plugged in;therefore, you want to add this script to a start up file.  See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local filehttps://www.maketecheasier.com/run-bash-commands-background-linux/), and [here](https://www.maketecheasier.com/run-bash-commands-background-linux/) for running background.
-
-```nohup bash startServer.sh &>/dev/null &```
-
-The & is necessary to have the process run in background, else it will not let your startup process finish.
-NOTE: This is going through some dynamic changes.  In order to enable IoT capabilities we are looking at switching to [lighttpd](http://redmine.lighttpd.net/projects/lighttpd) as a web server instead of Python's simpleHTTPServer.  Feel free to try this out, but be warned that we may rip it out in the future (by the end of July) and put something else in its place.  Hopefully we can do so without a lot of impact, and add a lot of new features!
-   
-   
+  
+  - Click on 'Clone or Download' button
+  - Select 'Download Zip'.  This should download the repository to the Downloads directory.
+  - Open a File Browser and go to the Downloads directory.
+  - Right click on 'OpenAg_MVP_UI-master.zip, and select 'Extract Here'
+  - Double click on the new directory 'OpenAg_MVP_UI-master to open it
+  - Move the web directory to Documents/OpenAg_MVP/
+  - Drag and drop the MVP_UI directory to the pi directory.
+  
 ### Create the view document in CouchDB
 
 To pull data from the database you need a view.  This is a specially named document in the data database.  Run the following command from the command line:
 
 ```curl -X PUT http://localhost:5984/mvp_sensor_data/_design/doc --upload-file /home/pi/MVP_UI/setup/view.txt```
 
+
+### Install charting software  
+
+  - Install pygal
+  ```sudo pip install pygal```
+
+### Configure the server:
+
+I am still testing the stability of the server, so there are two versions here (depending on how adventurious you are)
+
+The simple version starts the server from the command line, however you need to leave the terminal window open to keep the server running.  Messages will display in the window.  For this version, run:
+
+```bash ~/MVP_UI/scripts/startServer2.sh```
+
+  - To stop the server, press Ctl-C
+  
+  The second version runs the server in 'background' and will restart automatically every time the Raspberry is rebooted.  To do this you need to edit the file /etc/rc.local and all a line to start the server.
+  
+    - Open a terminal window
+    - Type:
+    ```cd /etc```
+    ```sudo leafpad rc.local```
+    
+    - scroll to just above the line that says "exit 0" (this should be the last line) and type:
+    
+    ```bash /home/pi/MVP_UI/scripts/startServer.sh```
+    
+   - See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local filehttps://www.maketecheasier.com/run-bash-commands-background-linux/), and [here](https://www.maketecheasier.com/run-bash-commands-background-linux/) for running background.
+
+  - logs & errors will go to: ~/MVP_UI/server.log
+
 ### The following entries need to be added to the crontab file.
-
-//This takes a picture one minute after the hour, for the hours of 6 to 22 (10pm)
-
-//There is no need to take pictures when the lights are off
-
-```1 6-22 * * * /home/pi/MVP_UI/scripts/webcam.sh```
 
 //This moves the latest picture, and builds the charts
 
