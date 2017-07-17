@@ -25,5 +25,5 @@ v_lst.reverse()
 line_chart.add('Humidity', v_lst)
 
 #Save the chart as SVG to the web directory
-line_chart.render_to_file('/home/pi/Documents/OpenAg-MVP/web/humidity_chart.svg')
+line_chart.render_to_file('/home/pi/MVP_UI/web/humidity_chart.svg')
 
