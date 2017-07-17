@@ -9,7 +9,7 @@ echo "Move latest webcam image"
 
 #Modify this path if you move the webcam image directory
 in_dir="/home/pi/Documents/OpenAg-MVP/webcam/"
-out_dir="/home/pi/Documents/OpenAg-MVP/web/"
+out_dir="/home/pi/MVP_UI/web/"
 
 #Pipe ls of the webcam directory from most recent to latest
 # Then clip off only the last line
