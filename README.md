@@ -48,10 +48,8 @@ This version runs the server in 'background' and will restart automatically ever
     
   ```bash /home/pi/MVP_UI/scripts/startServer.sh```
   
-  - You now need to start the server.  Either reboot you Raspberry Pi, or run:
-  
-  ```bash /home/pi/MVP_UI/scripts/startServer2.sh```
-    
+  - You now need to start the server.  Reboot your Raspberry Pi.
+ 
   - See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local filehttps://www.maketecheasier.com/run-bash-commands-background-linux/), and [here](https://www.maketecheasier.com/run-bash-commands-background-linux/) for running background.
 
   - logs & errors will go to: ~/MVP_UI/server.log
