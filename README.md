@@ -18,7 +18,6 @@ The UI is an 'add on' to the core MVP, hence here in a separate directory at thi
   - Open a File Browser and go to the Downloads directory.
   - Right click on 'OpenAg_MVP_UI-master.zip, and select 'Extract Here'
   - Double click on the new directory 'OpenAg_MVP_UI-master to open it
-  - Move the web directory to Documents/OpenAg_MVP/
   - Drag and drop the MVP_UI directory to the pi directory.
   
 ### Create the view document in CouchDB
@@ -43,10 +42,15 @@ This version runs the server in 'background' and will restart automatically ever
   ```cd /etc```
     
   ```sudo leafpad rc.local```
-    
+  
+     
   - scroll to just above the line that says "exit 0" (this should be the last line) and type:
     
   ```bash /home/pi/MVP_UI/scripts/startServer.sh```
+  
+  - You now need to start the server.  Either reboot you Raspberry Pi, or run:
+  
+  ```bash /home/pi/MVP_UI/scripts/startServer2.sh```
     
   - See the [instructions here](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md) for adding this shell script to the /etc/rc.local filehttps://www.maketecheasier.com/run-bash-commands-background-linux/), and [here](https://www.maketecheasier.com/run-bash-commands-background-linux/) for running background.
 
