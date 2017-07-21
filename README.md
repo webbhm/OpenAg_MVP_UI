@@ -76,14 +76,6 @@ The following will attempt to move the latest picture to the web directory and b
 
   - Double clicking on /home/pi/MVP_UI/web/index.html should bring it up in a browers.
 
-  - Before testing the server, you must make sure that any previous copies are stopped.  To stop the server, run:
-
-```/home/pi/MVP_UI/scripts/stopServer.sh```
-
-  - For testing working with the server (trying different port numbers, etc), use the script without the background processing:
-
-```/home/pi/MVP_UI/scripts/startServer2.sh```
-
 ### Future Development
 
   - This is a minimalist web page, enhancements are needed for data entry and IoT functions like remotely controlling pumps and other devices.
