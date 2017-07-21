@@ -72,7 +72,7 @@ If you encounter problems, run the pieces individually from the command line.
 
 The following will attempt to move the latest picture to the web directory and build the charts.  You should get some messages of what is done, but no errors.  Record and report any errors.
 
-```/home/pi/MVP_UI/scripts/render.sh```
+```sudo bash /home/pi/MVP_UI/scripts/render.sh```
 
   - Double clicking on /home/pi/MVP_UI/web/index.html should bring it up in a browers.
 
