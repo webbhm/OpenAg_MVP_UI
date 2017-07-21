@@ -61,9 +61,9 @@ This version runs the server in 'background' and will restart automatically ever
 
 ### The following entries need to be added to the crontab file.
 
-//This moves the latest picture, and builds the charts
+NOTE: The crontab editor is old and works different from most newer editors (it is command line oriented, and pre-dates graphical interfaces).  To save the file you type Ctl-X, they type 'y' to confirm that you want to save the file.  Read the key commands at the bottom of the editor.
 
-//It runs at 3 minutes after every hour.  The three minutes is to do the rendering after the picture has been taken
+  - This moves the latest picture, and builds the charts; it runs at 3 minutes after every hour.  The three minutes is to do the rendering after the picture has been taken
 
 ```3 * * * * /home/pi/MVP_UI/scripts/render.sh```
 
