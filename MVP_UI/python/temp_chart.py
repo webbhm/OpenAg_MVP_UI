@@ -6,10 +6,11 @@ import json
 #use the first key for attribute type
 #order descending so when limit the results will get the latest at the top
 r = requests.get('http://127.0.0.1:5984/mvp_sensor_data/_design/doc/_view/attribute_value?startkey=["temperature",{}]&endkey=["temperature"]&descending=true&limit=60')
-print r
+#print(r)
 v_lst = [float(x['value']['value']) for x in r.json()['rows']]
+#print(v_lst)
 ts_lst = [x['value']['timestamp'] for x in r.json()['rows']]
-
+#print(ts_lst)
 
 line_chart = pygal.Line()
 line_chart.title = 'Temperature'
