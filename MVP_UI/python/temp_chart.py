@@ -1,3 +1,5 @@
+# /usr/bin/env python
+
 import pygal
 import requests
 import json
