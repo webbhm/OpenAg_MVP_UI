@@ -1,9 +1,10 @@
+#!/usr/bin/python
+
 #This is a wrapper of SimpleHTTPServer to add SVG image handling
 #Author: Howard Webb
 #Date: 7/5/2017
 #NOTE: This needs to be started from the directory where your files to be served are located
 
-#!/usr/bin/python
 import SimpleHTTPServer
 import SocketServer
 import mimetypes
